@@ -2,12 +2,6 @@
 
 # Monitoring/kill/cleanup commands
 
-## Configure defaults so the az client can selectively ignore provided command line parameters
-## Example: Creating CosmosDB MongoDB instance
-## Note: Not really a great idea for community as it then overrides defaults that may be set by
-## a dev's company in their env, sadly...
-# az configure -d group=$MH_RESOURCE_GROUP location=$MH_REGION spring-cloud=$MH_SPRING_APPS_SERVICE subscription=$MH_SUBSCRIPTION
-
 ## Logs
 ### Tailing
 az spring app logs -n $<app_id> -g $MH_RESOURCE_GROUP -s $MH_SPRING_APPS_SERVICE -f
@@ -15,7 +9,7 @@ az spring app logs -n $<app_id> -g $MH_RESOURCE_GROUP -s $MH_SPRING_APPS_SERVICE
 ### See more
 az spring app logs -n $<app_id> -g $MH_RESOURCE_GROUP -s $MH_SPRING_APPS_SERVICE --lines 200
 
-## List keys for CosmosDB account :O)
+## List keys for CosmosDB account
 az cosmosdb keys list -n $MH_COSMOSDB_ACCOUNT -g $MH_RESOURCE_GROUP
 
 ## List all apps in this ASA instance
@@ -34,8 +28,6 @@ az group list --query "[].name" --output tsv
 
 ## Burn it to the ground
 az group delete -g $MH_RESOURCE_GROUP 
-### Apparently the sub parameter is no longer required. About time. MH 20221006 
-### --subscription $MH_SUBSCRIPTION -y
 
 ## Azure Spring Apps delete, destroy, el fin de la historia
 az spring delete -n $MH_SPRING_APPS_SERVICE -g $MH_RESOURCE_GROUP
@@ -48,7 +40,7 @@ time <script> | tee deployoutput.txt
 
 ## Exercise endpoints
 
-### If not already done, source envBBDFASA.sh first! Then...
+### If not already done, source envSandwichASA.sh first! Then...
 export GATEWAY_URI=$(az spring app show -n $MH_GATEWAY_SERVICE_ID -g $MH_RESOURCE_GROUP -s $MH_SPRING_APPS_SERVICE --query properties.url --output tsv)
 
 printf "\n\nTesting deployed services at $MH_GATEWAY_URI\n"
