@@ -1,0 +1,32 @@
+management:
+  endpoint:
+    chaosmonkey:
+      enabled: true
+    restart:
+      enabled: true
+    health:
+      show-details: always
+    env:
+      show-values: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+chaos:
+  monkey:
+    enabled: true
+    watcher:
+      restController: true
+      service: false
+    assaults:
+      level: 3
+      latency-active: true
+spring:
+  cloud:
+    kubernetes:
+      enabled: false
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
