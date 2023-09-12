@@ -58,6 +58,7 @@ az spring create -n $MH_SPRING_APPS_SERVICE -g $MH_RESOURCE_GROUP -l $MH_REGION 
 # az spring config-server set --config-file $CONFIG_DIR/application.yml -n $SPRING_APPS_SERVICE -g $RESOURCE_GROUP
 # OR
 # az spring config-server git set -n $MH_SPRING_APPS_SERVICE -g $MH_RESOURCE_GROUP --uri $MH_REPO_OWNER_URI/$MH_CONFIG_REPO
+printf "\n\nConnecting the config service to the config repo: $MH_REPO_OWNER_URI/$MH_PROJECT_REPO using the directory: $MH_CONFIG_DIR\n"
 az spring config-server git set -n $MH_SPRING_APPS_SERVICE -g $MH_RESOURCE_GROUP --uri $MH_REPO_OWNER_URI/$MH_PROJECT_REPO --search-paths $MH_CONFIG_DIR
 
 

@@ -6,7 +6,7 @@
 #         : Option for deploying to both of my accounts; change for yours ;)
 
 # Customize for your environment
-export MH_SUBSCRIPTION=<insert your subscription ID here>
+# export MH_SUBSCRIPTION=<insert your subscription ID here>
 
 export MH_ROOT_NAME='mh-sw'
 export MH_RESOURCE_GROUP=$MH_ROOT_NAME'-rg'
@@ -17,7 +17,7 @@ export MH_LOG_ANALYTICS=$MH_ROOT_NAME'-analytics'
 export MH_REGION='eastus'
 export MH_PROJECT_DIRECTORY=$HOME
 export MH_REPO_OWNER_URI='https://github.com/mkheck'
-export MH_PROJECT_REPO='sandwich'
+export MH_PROJECT_REPO='asa-sandwich'
 export MH_CONFIG_REPO='sandwich-config'
 export MH_CONFIG_DIR='configdir'
 
@@ -28,7 +28,7 @@ export MH_TOPPING_SERVICE_ID='topping-service'
 export MH_FOOD_SERVICE_ID='food-service'
 
 # Config repo location
-export MH_CONFIG_DIR="$MH_PROJECT_DIRECTORY/source-code/$MH_PROJECT_REPO/config"
+# export MH_CONFIG_DIR="$MH_PROJECT_DIRECTORY/source-code/$MH_PROJECT_REPO/config"
 
 # Individual app project directories
 export MH_GATEWAY_SERVICE_DIR="$MH_PROJECT_DIRECTORY/source-code/$MH_PROJECT_REPO/$MH_GATEWAY_SERVICE_ID"
