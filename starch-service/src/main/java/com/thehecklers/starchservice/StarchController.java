@@ -48,7 +48,7 @@ public class StarchController {
         return "Hello from Starch!";
     }
 
-    @GetMapping("/randomstarch")
+    @GetMapping("/random")
     public Starch getRandomStarch() {
         return starches.get(rnd.nextInt(starches.size()));
     }
@@ -60,6 +60,9 @@ public class StarchController {
 
     @GetMapping("/starches/{id}")
     public Starch getStarchById(@PathVariable String id) {
-        return starches.stream().filter(s -> s.id().equals(id)).findFirst().orElse(null);
+        return starches.stream()
+                .filter(s -> s.id().equals(id))
+                .findFirst()
+                .orElse(new Starch("00000000-0000-0000-0000-000000000000", "Starch not found", 0));
     }
 }
