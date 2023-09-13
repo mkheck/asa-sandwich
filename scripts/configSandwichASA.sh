@@ -68,11 +68,11 @@ printf "\n\nCreating the apps in Spring Apps\n"
 az spring app create -n $MH_GATEWAY_SERVICE_ID -g $MH_RESOURCE_GROUP -s $MH_SPRING_APPS_SERVICE \
     --instance-count 1 --memory 2Gi --runtime-version Java_17 --assign-endpoint true
 az spring app create -n $MH_STARCH_SERVICE_ID -g $MH_RESOURCE_GROUP -s $MH_SPRING_APPS_SERVICE \
-    --instance-count 1 --memory 2Gi --runtime-version Java_17 --assign-endpoint true
+    --instance-count 1 --memory 2Gi --runtime-version Java_17
 az spring app create -n $MH_TOPPING_SERVICE_ID -g $MH_RESOURCE_GROUP -s $MH_SPRING_APPS_SERVICE \
-    --instance-count 1 --memory 2Gi --runtime-version Java_17 --assign-endpoint true
+    --instance-count 1 --memory 2Gi --runtime-version Java_17
 az spring app create -n $MH_FOOD_SERVICE_ID -g $MH_RESOURCE_GROUP -s $MH_SPRING_APPS_SERVICE \
-    --instance-count 1 --memory 2Gi --runtime-version Java_17 --assign-endpoint true
+    --instance-count 1 --memory 2Gi --runtime-version Java_17
 
 # # Create app deployment constructs in ASA, another idiotic middle ground step to waste time with no default
 # printf "\n\nCreating the app deployments in Spring Apps\n"
