@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: starch
+          uri: lb://starch-service
+          predicates:
+            - Path=/starch/**
+          filters:
+            - StripPrefix=1
+#            - RewritePath=/starch, /
+        - id: topping
+          uri: lb://topping-service/
+          predicates:
+            - Path=/topping/**
+          filters:
+            - StripPrefix=1
+        - id: food
+          uri: lb://food-service/
+          predicates:
+            - Path=/food/**
+          filters:
+            - StripPrefix=1
