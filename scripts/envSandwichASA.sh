@@ -5,9 +5,9 @@
 # History : Official "version 1" 20230911.
 #         : Option for deploying to both of my accounts; change for yours ;)
 
-# Customize for your environment
-# export MH_SUBSCRIPTION=<insert your subscription ID here>
-
+# --- Customize for your environment ---
+export MH_SUBSCRIPTION=<your Azure subscription>
+# --------------------------------------
 export MH_ROOT_NAME='mh-sw'
 export MH_RESOURCE_GROUP=$MH_ROOT_NAME'-rg'
 export MH_SPRING_APPS_SERVICE=$MH_ROOT_NAME'-service'
